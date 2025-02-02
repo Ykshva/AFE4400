@@ -6,6 +6,8 @@ Window {
     height: 480
     visible: true
     title: qsTr("Pulse Oximeter")
+
+
     MainFrame {
         anchors.fill: parent
     }

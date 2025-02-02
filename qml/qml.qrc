@@ -2,5 +2,11 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>MainFrame.qml</file>
+        <file>COMSettings.qml</file>
+        <file>COMButton.qml</file>
+        <file>IOCOM.qml</file>
+        <file>Results.qml</file>
+        <file>Style.qml</file>
+        <file>qmldir</file>
     </qresource>
 </RCC>
