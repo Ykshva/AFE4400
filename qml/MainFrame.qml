@@ -20,7 +20,6 @@ Rectangle {
         rowSpacing: Style.offset
 
         COMSettings {
-            color: "red"
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
