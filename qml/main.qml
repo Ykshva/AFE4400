@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
+import QtQuick.Controls
 
 Window {
     width: 640
@@ -11,4 +12,5 @@ Window {
     MainFrame {
         anchors.fill: parent
     }
+
 }
