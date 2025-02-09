@@ -1,15 +1,10 @@
 #ifndef APPENGINE_H
 #define APPENGINE_H
 
+#include <QSerialPort>
 #include <QObject>
 
-struct COMSettings
-{
-    COMSettings() {}
-    QString speed = "";
-    QString countOfBits = "";
-    QString countOfStopBits = "";
-};
+
 
 class AppEngine : public QObject
 {
@@ -18,13 +13,14 @@ public:
     explicit AppEngine(QObject *parent = nullptr);
 
 private:
-    COMSettings comSettings;
+    QSerialPort* port;
 
-public slots:
-    void print();
-    void setCOMSpeed(QString speed);
-    void setCOMBits(QString bits);
-    void setCOMStopBits(QString stopBits);
+private:
+
+
+public slots:   
+    void openPort(int speed, int bits, int stopBits);
+
 signals:
 };
 

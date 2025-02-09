@@ -3,7 +3,14 @@ import QtQuick.Layouts
 import QtQuick.Controls
 
 
-Rectangle {    
+Rectangle {
+
+    id: _root
+
+    property var speed: Number(_speed.currentText)
+    property var bits: Number(_bits.currentText)
+    property var stopBits: Number(_stopBits.currentText)
+
 
     ColumnLayout {
         anchors {
@@ -33,6 +40,7 @@ Rectangle {
             }
 
             ComboBox {
+                id: _speed
                 model: ListModel {
                     ListElement { text: "9600" }
                     ListElement { text: "19200" }
@@ -40,11 +48,7 @@ Rectangle {
                 }
 
                 Layout.fillHeight: true
-                Layout.fillWidth: true
-
-                onActivated: function(index) {
-                    appEngine.setCOMSpeed(textAt(index))
-                }
+                Layout.fillWidth: true               
             }
 
             Text {
@@ -54,17 +58,14 @@ Rectangle {
             }
 
             ComboBox {
+                id: _bits
                 model: ListModel {
                     ListElement { text: "8" }
                     ListElement { text: "16" }
                     ListElement { text: "32" }
                 }
                 Layout.fillHeight: true
-                Layout.fillWidth: true
-
-                onActivated: function(index) {
-                    appEngine.setCOMBits(textAt(index))
-                }
+                Layout.fillWidth: true                
             }
 
             Text {
@@ -76,16 +77,13 @@ Rectangle {
             }
 
             ComboBox {
+                id: _stopBits
                 model: ListModel {
                     ListElement { text: "1" }
                     ListElement { text: "2" }
                 }
                 Layout.fillHeight: true
-                Layout.fillWidth: true
-
-                onActivated: function(index) {
-                    appEngine.setCOMStopBits(textAt(index))
-                }
+                Layout.fillWidth: true                
             }
         }
 
@@ -96,7 +94,8 @@ Rectangle {
             text: qsTr("Подключить")
 
             onClicked: {
-                appEngine.print();
+
+                appEngine.openPort(_root.speed, _root.bits, _root.stopBits);
             }
         }
     }

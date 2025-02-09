@@ -3,27 +3,11 @@
 AppEngine::AppEngine(QObject *parent)
     : QObject{parent}
 {
-
+    port = new QSerialPort(this);
 }
 
-void AppEngine::print()
+void AppEngine::openPort(int speed, int bits, int stopBits)
 {
-    qDebug() << comSettings.speed;
-    qDebug() << comSettings.countOfBits;
-    qDebug() << comSettings.countOfStopBits;
-}
+    port->setBaudRate(speed);
 
-void AppEngine::setCOMSpeed(QString speed)
-{
-    comSettings.speed = speed;
-}
-
-void AppEngine::setCOMBits(QString bits)
-{
-    comSettings.countOfBits = bits;
-}
-
-void AppEngine::setCOMStopBits(QString stopBits)
-{
-    comSettings.countOfStopBits = stopBits;
 }
