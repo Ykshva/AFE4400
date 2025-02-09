@@ -3,22 +3,14 @@ import QtQuick.Layouts
 import QtQuick.Controls
 
 
-Rectangle {
-
-    border  {
-        color: "black"
-        width: 3
-    }
+Rectangle {    
 
     ColumnLayout {
         anchors {
-            top: parent.top
-            topMargin: parent.height * 0.1
+            fill: parent
+            margins: 10
             horizontalCenter: parent.horizontalCenter
         }
-
-        width: parent.width * 0.7
-        height: parent.height * 0.7
 
         Text {
             id: _label
@@ -94,6 +86,17 @@ Rectangle {
                 onActivated: function(index) {
                     appEngine.setCOMStopBits(textAt(index))
                 }
+            }
+        }
+
+        Button {
+            id: _COMButton
+            height: parent.height * 0.66
+            Layout.fillWidth: true
+            text: qsTr("Подключить")
+
+            onClicked: {
+                appEngine.print();
             }
         }
     }

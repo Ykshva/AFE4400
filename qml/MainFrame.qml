@@ -6,38 +6,51 @@ Rectangle {
 
     color: Style.backgroundColor
 
-    GridLayout {
+    RowLayout {
 
-        id: _grid
+        id: _layout
         anchors.fill: parent
-        rows: 2
-        columns: 2
         anchors {
             margins: Style.offset
         }
 
-        columnSpacing: Style.offset
-        rowSpacing: Style.offset
+        ColumnLayout {
 
-        COMSettings {
             Layout.fillHeight: true
             Layout.fillWidth: true
+
+            COMSettings {
+
+                border  {
+                    color: "black"
+                    width: 3
+                }
+
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+            }
+
+            COMInput {
+
+                border  {
+                    color: "black"
+                    width: 3
+                }
+
+                color: Style.backgroundColor
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+            }
         }
 
-        IOCOM {
-            color: "orange"
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-        }
+        COMOutput {
 
-        COMButton {
-            color: "yellow"
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-        }
+            border  {
+                color: "black"
+                width: 3
+            }
 
-        Results {
-            color: "green"
+            color: Style.backgroundColor
             Layout.fillHeight: true
             Layout.fillWidth: true
         }

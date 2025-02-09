@@ -8,9 +8,7 @@ Window {
     visible: true
     title: qsTr("Pulse Oximeter")
 
-
     MainFrame {
         anchors.fill: parent
     }
-
 }
