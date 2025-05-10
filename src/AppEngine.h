@@ -4,19 +4,17 @@
 #include <QSerialPort>
 #include <QObject>
 
-
-
 class AppEngine : public QObject
 {
     Q_OBJECT
 public:
     explicit AppEngine(QObject *parent = nullptr);
+    ~AppEngine();
 
 private:
     QSerialPort* port;
 
 private:
-
 
 public slots:   
     void openPort(int speed, int bits, int stopBits);
