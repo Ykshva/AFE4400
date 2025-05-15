@@ -4,6 +4,7 @@ AppEngine::AppEngine(QObject *parent)
     : QObject{parent}
 {
     port = new QSerialPort(this);
+    connect(port, &QSerialPort::readyRead, this, &AppEngine::readPortData);
 }
 
 AppEngine::~AppEngine()
@@ -46,5 +47,16 @@ void AppEngine::detectAvailablePorts()
     foreach (auto port, listOfPorts) {
     if(port.description() != "")
         namesOfPorts.push_back(port.portName() + port.serialNumber());
+    }
+}
+
+void AppEngine::readPortData()
+{    
+    qDebug() << "HERE!!!";
+    if(port->isOpen())
+    {
+        qDebug() << "HERE2!!!";
+        emit dataChanged(port->readLine());
+
     }
 }

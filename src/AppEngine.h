@@ -22,8 +22,10 @@ public slots:
     void openPort(int speed, int bits, int stopBits);
     void detectAvailablePorts();
     QStringList getNamesOfPorts() { return namesOfPorts; }
+    void readPortData();
 
 signals:
+    void dataChanged(QString data);
 };
 
 #endif // APPENGINE_H

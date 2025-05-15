@@ -4,8 +4,8 @@ import QtQuick.Layouts
 
 Rectangle {    
 
-    TextField {
-        id: output
+    TextArea  {
+        id: _output
 								anchors {
             fill: parent
             margins: 10
@@ -18,6 +18,15 @@ Rectangle {
 
         verticalAlignment: TextField.AlignVCenter
         horizontalAlignment: TextField.AlignHCenter
+    }
+    
+    Connections {
+								target: appEngine
+								function onDataChanged(data)
+								{
+												console.log("data was received", data)
+												_output.text += data + "\n"
+								}
     }
 }
 
