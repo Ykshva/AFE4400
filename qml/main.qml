@@ -10,5 +10,8 @@ Window {
 
     MainFrame {
         anchors.fill: parent
+        Component.onCompleted: 
+        {
+        }
     }
 }

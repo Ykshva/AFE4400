@@ -7,5 +7,6 @@
         <file>COMOutput.qml</file>
         <file>Style.qml</file>
         <file>qmldir</file>
+        <file>COMChooser.qml</file>
     </qresource>
 </RCC>

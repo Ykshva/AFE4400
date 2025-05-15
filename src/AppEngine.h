@@ -2,7 +2,9 @@
 #define APPENGINE_H
 
 #include <QSerialPort>
+#include <QSerialPortInfo>
 #include <QObject>
+#include <QStringList>
 
 class AppEngine : public QObject
 {
@@ -13,11 +15,13 @@ public:
 
 private:
     QSerialPort* port;
-
-private:
+    QStringList namesOfPorts;
 
 public slots:   
+    void catchPortName(QString portName);
     void openPort(int speed, int bits, int stopBits);
+    void detectAvailablePorts();
+    QStringList getNamesOfPorts() { return namesOfPorts; }
 
 signals:
 };

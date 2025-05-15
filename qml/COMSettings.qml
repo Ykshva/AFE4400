@@ -92,11 +92,12 @@ Rectangle {
             height: parent.height * 0.66
             Layout.fillWidth: true
             text: qsTr("Подключить")
-
+												
             onClicked: {
-
                 appEngine.openPort(_root.speed, _root.bits, _root.stopBits);
             }
+            
+            
         }
     }
 }

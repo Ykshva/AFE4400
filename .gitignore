@@ -51,3 +51,7 @@ compile_commands.json
 build/
 
 Terminal/
+
+.qtc_clangd/
+
+debug/

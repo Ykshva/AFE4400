@@ -26,11 +26,7 @@ Rectangle {
             height: parent.height * 0.33
             text: qsTr("Отправить")
             Layout.fillWidth: true
-            Layout.alignment: Qt.AlignHCenter
-
-            onClicked: {
-                appEngine.print();
-            }
+            Layout.alignment: Qt.AlignHCenter            
         }
     }
 }

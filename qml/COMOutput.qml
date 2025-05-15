@@ -6,8 +6,11 @@ Rectangle {
 
     TextField {
         id: output
-
-        anchors.fill: parent
+								anchors {
+            fill: parent
+            margins: 10
+            horizontalCenter: parent.horizontalCenter
+        }     
 
         placeholderText: "Полученные данные"
         font.family: "Verdana"
