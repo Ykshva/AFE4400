@@ -23,6 +23,7 @@ public slots:
     void detectAvailablePorts();
     QStringList getNamesOfPorts() { return namesOfPorts; }
     void readPortData();
+    void sendData(QString data);
 
 signals:
     void dataChanged(QString data);

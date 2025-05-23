@@ -12,7 +12,7 @@ Rectangle {
         }        
 
         TextField {
-            id: input
+            id: _input
             placeholderText: "Введите то, что хотите отправить"
             font.family: "Verdana"
             font.pixelSize: 14
@@ -26,7 +26,11 @@ Rectangle {
             height: parent.height * 0.33
             text: qsTr("Отправить")
             Layout.fillWidth: true
-            Layout.alignment: Qt.AlignHCenter            
+            Layout.alignment: Qt.AlignHCenter
+            
+            onClicked : {
+																appEngine.sendData(_input.text + "\n")
+            }        
         }
     }
 }

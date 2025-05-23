@@ -45,8 +45,8 @@ void AppEngine::detectAvailablePorts()
 {
     auto listOfPorts = QSerialPortInfo::availablePorts();
     foreach (auto port, listOfPorts) {
-    if(port.description() != "")
-        namesOfPorts.push_back(port.portName() + port.serialNumber());
+        if(port.description() != "")
+            namesOfPorts.push_back(port.portName() + port.serialNumber());
     }
 }
 
@@ -57,6 +57,10 @@ void AppEngine::readPortData()
     {
         qDebug() << "HERE2!!!";
         emit dataChanged(port->readLine());
-
     }
+}
+
+void AppEngine::sendData(QString data)
+{
+    port->write(data.toStdString().c_str());
 }

@@ -96,8 +96,6 @@ Rectangle {
             onClicked: {
                 appEngine.openPort(_root.speed, _root.bits, _root.stopBits);
             }
-            
-            
         }
     }
 }
